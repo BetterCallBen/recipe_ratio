@@ -1,0 +1,6 @@
+<%= simple_form_for locales do |f| %>
+  <%= f.input :quantity %>
+  <%= f.input :unity %>
+  <%= f.association :ingredient %>
+  <%= f.button :submit %>
+<% end %>

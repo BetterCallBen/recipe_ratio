@@ -40,6 +40,12 @@ Ingredient.create!(
 Ingredient.create!(
   name: "Fromage"
 )
+Ingredient.create!(
+  name: "Sucre"
+)
+Ingredient.create!(
+  name: "Sel"
+)
 
 puts "#{User.all.count} users were created"
 puts "#{Recipe.all.count} recipes were created"

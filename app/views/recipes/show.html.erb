@@ -1,2 +1,28 @@
-<p>name: <%= @recipe.name %></p>
-<p>for: <%= @recipe.number_of_people %>people</p>
+<h1><%= @recipe.name %> pour <%= @recipe.number_of_people %> personnes</H1>
+
+<h3>ingredients</h3>
+
+<div class="ingredients">
+  <% @recipe.recipe_ingredients.each do |ingredient| %>
+    <div class="ingredient">
+      <%= ingredient.ingredient.name %>
+      <%= ingredient.quantity %>
+      <%= ingredient.unity %>
+    </div>
+  <% end %>
+</div>
+
+<div class="new_ingredient">
+  <h3>Ajouter un ingredient</h3>
+  <%= render "shared/add_ingredient_form", locales: [@recipe, RecipeIngredient.new] %>
+</div>
+
+<%= render "shared/add_ratio_form", locales: [@recipe, Ratio.new] %>
+
+<% @recipe.ratios.each do |ratio| %>
+  <h1><%= @recipe.name %> pour <%= ratio.number_of_people %></h1>
+  <% @recipe.recipe_ingredients.each do |ingredient| %>
+    <%= ingredient.ingredient.name %>
+  <% end %>
+  <%= ratio.number_of_people %>
+<% end %>
