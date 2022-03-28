@@ -1,0 +1,6 @@
+<% @recipes.each do |recipe| %>
+  <%= link_to recipe_path(recipe) do %>
+    <p>name: <%= recipe.name %></p>
+    <p>for: <%= recipe.number_of_people %> people</p>
+  <% end %>
+<% end %>
