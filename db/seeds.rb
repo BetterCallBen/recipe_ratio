@@ -2,7 +2,6 @@ puts "cleaning db..."
 User.destroy_all
 Ingredient.destroy_all
 
-
 benj = User.create!(
   password: "secret",
   email: "benjbdk@gmail.com"
@@ -11,13 +10,13 @@ benj = User.create!(
 crepe = Recipe.create!(
   name: "crepe",
   number_of_people: 5,
-  user: benj,
+  user: benj
 )
 
 Recipe.create!(
   name: "quiche",
   number_of_people: 4,
-  user: benj,
+  user: benj
 )
 
 Recipe.create!(
@@ -26,27 +25,72 @@ Recipe.create!(
   user: benj
 )
 
-Ingredient.create!(
+oeuf = Ingredient.create!(
   name: "Oeuf"
 )
-Ingredient.create!(
+farine = Ingredient.create!(
   name: "Farine"
 )
-Ingredient.create!(
+eau = Ingredient.create!(
   name: "Eau"
 )
-Ingredient.create!(
+jambon = Ingredient.create!(
   name: "Jambon"
 )
-Ingredient.create!(
+fromage = Ingredient.create!(
   name: "Fromage"
 )
-Ingredient.create!(
+sucre = Ingredient.create!(
   name: "Sucre"
 )
-Ingredient.create!(
+sel = Ingredient.create!(
   name: "Sel"
 )
+lait = Ingredient.create!(
+  name: "Lait"
+)
+creme = Ingredient.create!(
+  name: "Crème fraiche"
+)
+sucre_vanille = Ingredient.create!(
+  name: "Sucre Vanillé"
+)
+huile = Ingredient.create!(
+  name: "huile"
+)
+
+RecipeIngredient.create!(
+  quantity: 500,
+  unity: "g",
+  recipe: crepe,
+  ingredient: fromage
+)
+RecipeIngredient.create!(
+  quantity: 500,
+  unity: "",
+  recipe: crepe,
+  ingredient: oeuf
+)
+RecipeIngredient.create!(
+  quantity: 120,
+  unity: "g",
+  recipe: crepe,
+  ingredient: farine
+)
+RecipeIngredient.create!(
+  quantity: 150,
+  unity: "mL",
+  recipe: crepe,
+  ingredient: lait
+)
+RecipeIngredient.create!(
+  quantity: 1,
+  unity: "sachet",
+  recipe: crepe,
+  ingredient: sucre_vanille
+)
+
+UNITY = ["g", "mL", "L", "kg", "sachet"]
 
 puts "#{User.all.count} users were created"
 puts "#{Recipe.all.count} recipes were created"
