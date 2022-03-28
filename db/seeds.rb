@@ -7,7 +7,7 @@ benj = User.create!(
   email: "benjbdk@gmail.com"
 )
 
-Recipe.create!(
+crepe = Recipe.create!(
   name: "crepe",
   number_of_people: 5,
   user: benj,
@@ -22,8 +22,25 @@ Recipe.create!(
 Recipe.create!(
   name: "lasagne",
   number_of_people: 5,
-  user: benj,
+  user: benj
+)
+
+Ingredient.create!(
+  name: "Oeuf"
+)
+Ingredient.create!(
+  name: "Farine"
+)
+Ingredient.create!(
+  name: "Eau"
+)
+Ingredient.create!(
+  name: "Jambon"
+)
+Ingredient.create!(
+  name: "Fromage"
 )
 
 puts "#{User.all.count} users were created"
 puts "#{Recipe.all.count} recipes were created"
+puts "#{Ingredient.all.count} ingredients were created"
