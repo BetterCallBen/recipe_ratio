@@ -1,0 +1,11 @@
+<div class="ingredients">
+    <% @recipe.recipe_ingredients.each do |ingredient| %>
+      <div class="ingredient">
+        <p class="bold"><%= ingredient.ingredient.name %></p>
+        <div class="quantity">
+          <p><%= ingredient.quantity * @ratio.number_of_people / @recipe.number_of_people%></p>
+          <p><%= ingredient.unity %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>

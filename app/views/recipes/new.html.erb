@@ -1,0 +1,5 @@
+<%= simple_form_for @recipe do |f| %>
+  <%= f.input :name, label: "Nom" %>
+  <%= f.input :number_of_people, label: "Pour combien de personne ?" %>
+  <%= f.button :submit, value: "Ajouter" %>
+<% end %>

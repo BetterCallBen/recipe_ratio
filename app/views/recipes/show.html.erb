@@ -1,33 +1,31 @@
-<h1><%= @recipe.name %> pour <%= @recipe.number_of_people %> personnes</H1>
+<div class="container">
+  <div class="mini-navbar">
+    <%= link_to "back", :back %>
+    <h1 class="title"><%= @recipe.name.capitalize %> </h1>
+    <%= link_to "...", edit_recipe_path(@recipe) %>
+  </div>
 
-<h3>Ingrédients</h3>
+  <h3 class="title">Ingrédients (<%= @recipe.recipe_ingredients.count %>)</h3>
 
-<div class="ingredients">
-  <% @recipe.recipe_ingredients.each do |ingredient| %>
-    <div class="ingredient">
-      <%= ingredient.ingredient.name %>
-      <%= ingredient.quantity %>
-      <%= ingredient.unity %>
-    </div>
-  <% end %>
-</div>
-
-<div class="new_ingredient">
-  <h3>Ajouter un ingrédient</h3>
-  <%= render "shared/add_ingredient_form", locales: [@recipe, RecipeIngredient.new] %>
-</div>
-
-<%= render "shared/add_ratio_form", locales: [@recipe, Ratio.new] %>
-
-<% @recipe.ratios.each do |ratio| %>
-  <h1><%= @recipe.name %> pour <%= ratio.number_of_people %> personnes</h1>
   <div class="ingredients">
     <% @recipe.recipe_ingredients.each do |ingredient| %>
       <div class="ingredient">
-        <%= ingredient.ingredient.name %>
-        <%= ingredient.quantity * ratio.number_of_people / @recipe.number_of_people %>
-        <%= ingredient.unity %>
+        <p class="bold"><%= ingredient.ingredient.name %></p>
+        <div class="quantity">
+          <p><%= ingredient.quantity %></p>
+          <p><%= ingredient.unity %></p>
+        </div>
       </div>
     <% end %>
   </div>
-<% end %>
+
+  <div class="new_ingredient">
+    <h3>Ajouter un ingrédient</h3>
+    <%= render "shared/add_ingredient_form", locales: [@recipe, RecipeIngredient.new] %>
+  </div>
+
+
+  <div class="new-ratio">
+    <%= render "ratios/new", locales: [@recipe, Ratio.new] %>
+  </div>
+</div>

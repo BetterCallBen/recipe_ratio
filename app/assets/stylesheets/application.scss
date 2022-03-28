@@ -10,3 +10,20 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+body {
+  background-color: white;
+}
+abbr {
+  display: none;
+}
+.bold {
+  font-weight: bold;
+}
+.title {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #0d123f;
+}
+p {
+  margin: 0;
+}
