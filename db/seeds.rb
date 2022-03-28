@@ -1,5 +1,6 @@
-User.destroy_all
 puts "cleaning db..."
+User.destroy_all
+Ingredient.destroy_all
 
 
 benj = User.create!(
