@@ -1,4 +1,6 @@
 .ingredients {
+  height: 60vh;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,13 +10,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 80px;
     width: 100%;
     border-radius: 12px;
     background-color: #F7F8FC;
     .quantity {
       display: flex;
       color: #ADAFB0;
+    }
+    &.add-ingredient {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

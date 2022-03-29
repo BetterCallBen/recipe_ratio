@@ -1,31 +1,50 @@
-<div class="container">
-  <div class="mini-navbar">
-    <%= link_to "back", :back %>
-    <h1 class="title"><%= @recipe.name.capitalize %> </h1>
-    <%= link_to "...", edit_recipe_path(@recipe) %>
-  </div>
+<div class="show-page" data-controller="recipe">
+  <div class="container" data-recipe-target="showPage">
 
-  <h3 class="title">Ingrédients (<%= @recipe.recipe_ingredients.count %>)</h3>
+    <div class="mini-navbar">
+      <%= link_to :back do%>
+        <i class="fa-solid fa-arrow-left-long arrow"></i>
+      <% end %>
+      <h1 class="bold blue"><%= @recipe.name.capitalize %> </h1>
+      <%= link_to edit_recipe_path(@recipe) do %>
+        <i class="fa-solid fa-pen pen"></i>
+      <% end %>
+    </div>
 
-  <div class="ingredients">
-    <% @recipe.recipe_ingredients.each do |ingredient| %>
-      <div class="ingredient">
-        <p class="bold"><%= ingredient.ingredient.name %></p>
-        <div class="quantity">
-          <p><%= ingredient.quantity %></p>
-          <p><%= ingredient.unity %></p>
+    <div class="title-div">
+      <h3 class="title">Ingrédients (<%= @recipe.recipe_ingredients.count %>)</h3>
+      <a class="add-ingredient-btn" data-action="click->recipe#showIngredientForm">add ingredient</a>
+    </div>
+
+    <div class="ingredients">
+      <% @recipe.recipe_ingredients.each do |ingredient| %>
+        <div class="ingredient">
+          <p class="bold"><%= ingredient.ingredient.name %></p>
+          <div class="quantity">
+            <p><%= ingredient.quantity %></p>
+            <p><%= ingredient.unity %></p>
+          </div>
         </div>
+      <% end %>
       </div>
-    <% end %>
+
   </div>
 
-  <div class="new_ingredient">
+  <a class="new-ratio-btn" data-action="click->recipe#showRatioForm">
+    Calculer les proportions
+    <i class="fa-solid fa-arrow-right"></i>
+  </a>
+
+
+  <div class="new-ingredient-form hidden" data-recipe-target="ingredientForm">
+    <a data-action="click->recipe#hideIngredientForm"><i class="fa-solid fa-xmark"></i></a>
     <h3>Ajouter un ingrédient</h3>
     <%= render "shared/add_ingredient_form", locales: [@recipe, RecipeIngredient.new] %>
   </div>
 
-
-  <div class="new-ratio">
+  <div class="new-ratio-form hidden" data-recipe-target="ratioForm">
+    <a data-action="click->recipe#hideRatioForm"><i class="fa-solid fa-xmark"></i></a>
     <%= render "ratios/new", locales: [@recipe, Ratio.new] %>
   </div>
+
 </div>

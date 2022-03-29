@@ -12,6 +12,7 @@
 @import "pages/index";
 body {
   background-color: white;
+  position: relative;
 }
 abbr {
   display: none;
@@ -20,10 +21,15 @@ abbr {
   font-weight: bold;
 }
 .title {
-  font-weight: bold;
-  font-size: 1.4rem;
-  color: #0d123f;
-}
-p {
   margin: 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #0f1144;
+  margin: 24px 0;
+}
+h1,h2,h3,h4,h5,h6, p {
+  margin: 0;
+}
+.blue {
+  color: #0f1144;
 }

@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+}
+.btn-center {
+  display: flex;
+  justify-content: center;
+}
+.new-ratio-btn {
+  padding: 18px;
+  width: 70vw;
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 16px;
+  color: white;
+  background-color: black;
+}
+.add-ingredient-btn {
+  padding: 10px 16px;
+  background-color: #3CBE6B;
+  color: white;
+  border-radius: 12px;
+}

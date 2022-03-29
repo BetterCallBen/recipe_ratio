@@ -66,7 +66,7 @@ RecipeIngredient.create!(
   ingredient: fromage
 )
 RecipeIngredient.create!(
-  quantity: 500,
+  quantity: 5,
   unity: "",
   recipe: crepe,
   ingredient: oeuf

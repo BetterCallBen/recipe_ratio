@@ -1,4 +1,18 @@
-<div class="ingredients">
+<div class="container">
+  <div class="mini-navbar">
+    <%= link_to :back do %>
+      <i class="fa-solid fa-arrow-left-long arrow"></i>
+    <% end %>
+    <h1 class="bold blue"><%= @recipe.name.capitalize %> </h1>
+    <%= link_to  edit_recipe_path(@recipe) do %>
+      <i class="fa-solid fa-pen pen"></i>
+    <% end %>
+  </div>
+
+  <h3 class="title">Ingrédients (<%= @recipe.recipe_ingredients.count %>)</h3>
+
+
+  <div class="ingredients">
     <% @recipe.recipe_ingredients.each do |ingredient| %>
       <div class="ingredient">
         <p class="bold"><%= ingredient.ingredient.name %></p>
@@ -9,3 +23,4 @@
       </div>
     <% end %>
   </div>
+</div>

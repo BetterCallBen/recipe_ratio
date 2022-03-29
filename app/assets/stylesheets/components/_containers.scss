@@ -1,4 +1,15 @@
 .container {
-  margin: 0 auto;
-  width: 80vw;
+  width: 100vw;
+  min-height: 100vh;
+  &.pop-up {
+    filter: brightness(60%);
+    backdrop-filter: brightness(60%);
+  }
+}
+
+.title-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
