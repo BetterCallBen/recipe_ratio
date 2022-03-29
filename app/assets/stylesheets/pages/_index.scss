@@ -1,2 +1,9 @@
 @import "home";
 @import "show";
+
+.recipes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

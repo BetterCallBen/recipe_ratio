@@ -7,19 +7,23 @@ a {
 }
 .new-ratio-btn {
   padding: 18px;
-  width: 70vw;
+  width: 65vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   position: absolute;
   bottom: 5vh;
   left: 0;
   right: 0;
   margin: 0 auto;
-  border-radius: 16px;
+  border-radius: 22px;
   color: white;
   background-color: black;
 }
 .add-ingredient-btn {
   padding: 10px 16px;
-  background-color: #3CBE6B;
+  background-color: #4BBF6C;
   color: white;
   border-radius: 12px;
 }
