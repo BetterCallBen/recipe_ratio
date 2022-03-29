@@ -2,8 +2,8 @@
   width: 100vw;
   min-height: 100vh;
   &.pop-up {
-    filter: brightness(60%);
-    backdrop-filter: brightness(60%);
+    filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 }
 
