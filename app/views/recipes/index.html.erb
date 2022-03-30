@@ -1,10 +1,14 @@
-<div class="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= link_to recipe_path(recipe) do %>
-      <div class="recipe">
-        <p>name: <%= recipe.name %></p>
-        <p>for: <%= recipe.number_of_people %> people</p>
-      </div>
+<div class="container">
+
+  <h1 class="title">Your best recipes</h1>
+  <div class="recipes">
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe) do %>
+        <div class="recipe">
+          <p class="recipe-name"><%= recipe.name %></p>
+          <p class="recipe-people">for: <%= recipe.number_of_people %> people</p>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

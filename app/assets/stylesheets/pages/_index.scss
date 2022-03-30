@@ -6,4 +6,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  gap: 24px;
+  .recipe {
+    background-image: url("crepe.jpg");
+    background-size: cover;
+    display: flex;
+    width: 85vw;
+    height: 500px;
+    position: relative;
+    color: white;
+    border-radius: 24px;
+    .recipe-name {
+      font-size: 1.4rem;
+      position: absolute;
+      bottom: 32px;
+      left: 24px;
+      font-weight: bold;
+    }
+    .recipe-people {
+      font-size: 1.2rem;
+      position: absolute;
+      bottom: 12px;
+      left: 24px;
+      color: rgb(189, 189, 189);
+    }
+  }
 }
