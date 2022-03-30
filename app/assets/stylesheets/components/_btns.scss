@@ -20,6 +20,9 @@ a {
   border-radius: 22px;
   color: white;
   background-color: black;
+  &:hover {
+    color: white;
+  }
 }
 .add-ingredient-btn {
   padding: 10px 16px;
