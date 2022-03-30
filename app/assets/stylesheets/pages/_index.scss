@@ -12,22 +12,22 @@
     background-image: url("crepe.jpg");
     background-size: cover;
     display: flex;
-    width: 85vw;
-    height: 500px;
+    width: 84vw;
+    height: 400px;
     position: relative;
     color: white;
     border-radius: 24px;
     .recipe-name {
-      font-size: 1.4rem;
+      font-size: 2rem;
       position: absolute;
-      bottom: 32px;
+      bottom: 64px;
       left: 24px;
       font-weight: bold;
     }
     .recipe-people {
-      font-size: 1.2rem;
+      font-size: 1rem;
       position: absolute;
-      bottom: 12px;
+      bottom: 24px;
       left: 24px;
       color: rgb(189, 189, 189);
     }

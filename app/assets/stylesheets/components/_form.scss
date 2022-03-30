@@ -1,16 +1,18 @@
 .new-ratio-form {
+  padding: 12px;
   border-radius: 12px;
   height: 40vh;
   width: 80vw;
   background-color: white;
   position: absolute;
-  top: 30vh;
+  top: 25vh;
   left: 0;
   right: 0;
   margin: auto;
   opacity: 1;
   z-index: 1;
   transition: all 0.3s ease-out;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.193);
   &.hidden {
     opacity: 0;
     z-index: -1;
