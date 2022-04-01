@@ -4,6 +4,10 @@
 
   <div class="infos-div">
     <%= image_tag("uber.png", class: "uber") %>
+    <div>
+      <p class="blue">Tu as <%= Recipe.where(user: current_user).count %> recettes</p>
+      <%= link_to "Une de plus?", new_recipe_path, class: "add-recipe-btn"  %>
+    </div>
   </div>
 
   <h3 class="title title-recipes">Your best recipes</h3>
@@ -13,7 +17,7 @@
       <%= link_to recipe_path(recipe) do %>
         <div class="recipe">
           <%= image_tag("crepe.jpg", class: "recipe-img") %>
-          <p class="recipe-name blue"><%= recipe.name %></p>
+          <p class="recipe-name blue"><%= recipe.name.capitalize %></p>
           <p class="recipe-people"><%= recipe.number_of_people %> personnes</p>
         </div>
       <% end %>
