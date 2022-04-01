@@ -4,4 +4,5 @@ class Recipe < ApplicationRecord
   has_many :ratios, dependent: :destroy
 
   validates :name, :number_of_people, presence: true
+  has_one_attached :photo
 end

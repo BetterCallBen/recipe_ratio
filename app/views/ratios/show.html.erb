@@ -3,7 +3,7 @@
     <%= link_to :back do %>
       <i class="fa-solid fa-arrow-left-long arrow"></i>
     <% end %>
-      <h1 class="bold blue"><%= @recipe.name.capitalize %> (pour <%= @ratio.number_of_people %>) </h1>
+      <h1 class="bold blue"><%= @recipe.name.capitalize %> (for <%= @ratio.number_of_people %>) </h1>
     <%= link_to edit_recipe_path(@recipe) do %>
       <i class="fa-solid fa-pen pen"></i>
     <% end %>
@@ -11,7 +11,7 @@
 
   <%= image_tag("crepe.jpg", class: "crepe-img") %>
 
-  <h3 class="title">Ingrédients (<%= @recipe.recipe_ingredients.count %>)</h3>
+  <h3 class="title title-ingredient">Ingredients (<%= @recipe.recipe_ingredients.count %>)</h3>
 
 
   <div class="ingredients ratio-ingredients">

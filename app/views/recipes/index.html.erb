@@ -6,7 +6,7 @@
     <%= image_tag("uber.png", class: "uber") %>
     <div>
       <p class="blue">You have <%= pluralize(Recipe.where(user: current_user).count, "recipe") %></p>
-      <%= link_to "One more?", new_recipe_path, class: "add-recipe-btn"  %>
+      <%= link_to "Add one?", new_recipe_path, class: "add-recipe-btn"  %>
     </div>
   </div>
 
@@ -16,7 +16,11 @@
     <% @recipes.each do |recipe| %>
       <%= link_to recipe_path(recipe) do %>
         <div class="recipe">
-          <%= image_tag("crepe.jpg", class: "recipe-img") %>
+          <% if recipe.photo.attached? %>
+            <%= cl_image_tag recipe.photo.key, class: "recipe-img" %>
+          <% else %>
+            <%= image_tag("crepe.jpg", class: "recipe-img") %>
+          <% end %>
           <p class="recipe-name blue"><%= recipe.name.capitalize %></p>
           <p class="recipe-people"><%= recipe.number_of_people %> people</p>
         </div>
