@@ -1,12 +1,12 @@
 <div class="container">
-  <h1 class="hello-title">Hello Benjamin</h1>
-  <p class="grey">What you want to cook today ? </p>
+  <h1 class="hello-title">Hello <%= @user.first_name %></h1>
+  <p class="grey">What do you wanna cook today ? </p>
 
   <div class="infos-div">
     <%= image_tag("uber.png", class: "uber") %>
     <div>
-      <p class="blue">Tu as <%= Recipe.where(user: current_user).count %> recettes</p>
-      <%= link_to "Une de plus?", new_recipe_path, class: "add-recipe-btn"  %>
+      <p class="blue">You have <%= pluralize(Recipe.where(user: current_user).count, "recipe") %></p>
+      <%= link_to "One more?", new_recipe_path, class: "add-recipe-btn"  %>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
         <div class="recipe">
           <%= image_tag("crepe.jpg", class: "recipe-img") %>
           <p class="recipe-name blue"><%= recipe.name.capitalize %></p>
-          <p class="recipe-people"><%= recipe.number_of_people %> personnes</p>
+          <p class="recipe-people"><%= recipe.number_of_people %> people</p>
         </div>
       <% end %>
     <% end %>
