@@ -24,6 +24,16 @@ Recipe.create!(
   number_of_people: 5,
   user: benj
 )
+Recipe.create!(
+  name: "pates carbo",
+  number_of_people: 5,
+  user: benj
+)
+Recipe.create!(
+  name: "riz",
+  number_of_people: 5,
+  user: benj
+)
 
 oeuf = Ingredient.create!(
   name: "Oeuf"

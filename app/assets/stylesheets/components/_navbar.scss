@@ -4,3 +4,15 @@
   align-items: center;
   padding: 50px 12px 24px;
 }
+
+.bot-nav {
+  position: fixed;
+  bottom: 0;
+  height: 8vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+  background-color: white;
+}

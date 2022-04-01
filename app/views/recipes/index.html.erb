@@ -1,14 +1,36 @@
 <div class="container">
+  <h1 class="hello-title">Hello Benjamin</h1>
+  <p class="grey">What you want to cook today ? </p>
 
-  <h1 class="title">Your best recipes</h1>
+  <div class="infos-div">
+    <%= image_tag("uber.png", class: "uber") %>
+  </div>
+
+  <h3 class="title title-recipes">Your best recipes</h3>
+
   <div class="recipes">
     <% @recipes.each do |recipe| %>
       <%= link_to recipe_path(recipe) do %>
         <div class="recipe">
-          <p class="recipe-name"><%= recipe.name %></p>
-          <p class="recipe-people">pour <%= recipe.number_of_people %> people</p>
+          <%= image_tag("crepe.jpg", class: "recipe-img") %>
+          <p class="recipe-name blue"><%= recipe.name %></p>
+          <p class="recipe-people"><%= recipe.number_of_people %> personnes</p>
         </div>
       <% end %>
     <% end %>
   </div>
+</div>
+
+<div class="bot-nav">
+  <%= link_to root_path do %>
+    <i class="fa-solid fa-house-chimney home"></i>
+  <% end %>
+
+  <%= link_to recipes_path do %>
+    <i class="fa-solid fa-utensils recipe active"></i>
+  <% end %>
+
+  <%= link_to root_path do %>
+    <i class="fa-solid fa-user user"></i>
+  <% end %>
 </div>

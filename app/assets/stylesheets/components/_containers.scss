@@ -1,7 +1,7 @@
 .container {
   width: 100vw;
   min-height: 100vh;
-  padding: 0 8vw;
+  padding: 0 5vw;
   &.pop-up {
     filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -12,4 +12,5 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 24px 0 20px;
 }
