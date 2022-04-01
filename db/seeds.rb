@@ -3,6 +3,8 @@ User.destroy_all
 Ingredient.destroy_all
 
 benj = User.create!(
+  first_name: "Benjamin",
+  last_name: "Boisson",
   password: "secret",
   email: "benjbdk@gmail.com"
 )
