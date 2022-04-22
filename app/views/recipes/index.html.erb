@@ -22,7 +22,10 @@
             <%= image_tag("crepe.jpg", class: "recipe-img") %>
           <% end %>
           <p class="recipe-name blue"><%= recipe.name.capitalize %></p>
-          <p class="recipe-people"><%= recipe.number_of_people %> people</p>
+          <div class="recipe-infos">
+            <p class="recipe-people"><%= recipe.number_of_people %> people</p>
+            <p class="recipe-ingredients"><%= recipe.recipe_ingredients.count %> <i class="fa-solid fa-egg eggs"></i></p>
+          </div>
         </div>
       <% end %>
     <% end %>

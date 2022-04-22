@@ -1,10 +1,11 @@
 @import "home";
 @import "show";
+
 .hello-title {
   color: #4BBF6C;
   font-weight: bold;
-  padding-top: 45px;
-  margin-bottom: 6px;
+  padding-top: 5vh;
+  margin-bottom: 0.7vh;
 }
 .infos-div {
   height: 10vh;
@@ -14,7 +15,7 @@
   gap: 12px;
   background-color: #4bbf6c2a;
   border-radius: 12px;
-  margin: 22px 0;
+  margin: 2.5vh 0;
   padding: 0 18px;
   .uber {
     height: 100%;
@@ -25,7 +26,7 @@
   }
 }
 .title-recipes {
-  margin-bottom: 12px !important;
+  margin-bottom: 1.3vh !important;
 }
 .recipes {
   display: grid;
@@ -34,12 +35,14 @@
   width: 100%;
   height: 60vh;
   overflow-y: scroll;
+  padding: 6px;
+  padding-bottom: 1.5vh;
   .recipe {
     display: flex;
     flex-direction: column;
     height: 230px;
     border-radius: 12px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.065);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.074);
     .recipe-img {
       height: 55%;
       width: 100%;
@@ -47,14 +50,22 @@
       object-fit: cover;
     }
     .recipe-name {
-      font-size: 1.4rem;
       margin: 8px 12px;
       font-weight: bold;
     }
-    .recipe-people {
-      font-size: 1rem;
-      margin-left: 12px;
-      color: rgb(137, 137, 137);
+    .recipe-infos {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 12px;
+      .recipe-people {
+        color: rgb(117, 117, 117);
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .recipe-ingredients {
+        font-size: 1rem;
+        color: rgb(149, 149, 149);
+      }
     }
   }
 }

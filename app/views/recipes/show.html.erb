@@ -5,7 +5,7 @@
       <%= link_to recipes_path do%>
         <i class="fa-solid fa-arrow-left-long arrow"></i>
       <% end %>
-      <h1 class="bold blue"><%= @recipe.name.capitalize %> (for <%= @recipe.number_of_people %>) </h1>
+      <h1 class="bold blue nav-title"><%= @recipe.name.capitalize %> (for <%= @recipe.number_of_people %>) </h1>
       <%= link_to edit_recipe_path(@recipe) do %>
         <i class="fa-solid fa-pen pen"></i>
       <% end %>
