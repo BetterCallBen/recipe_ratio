@@ -4,10 +4,10 @@
   <% end %>
 
   <%= link_to recipes_path do %>
-    <i class="fa-solid fa-utensils recipe"></i>
+    <i class="fa-solid fa-utensils recipe active"></i>
   <% end %>
 
-  <%= link_to root_path do %>
+  <%= link_to destroy_user_session_path, method: :delete do %>
     <i class="fa-solid fa-user user"></i>
   <% end %>
 </div>

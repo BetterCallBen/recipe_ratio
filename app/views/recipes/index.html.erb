@@ -32,16 +32,4 @@
   </div>
 </div>
 
-<div class="bot-nav">
-  <%= link_to root_path do %>
-    <i class="fa-solid fa-house-chimney home"></i>
-  <% end %>
-
-  <%= link_to recipes_path do %>
-    <i class="fa-solid fa-utensils recipe active"></i>
-  <% end %>
-
-  <%= link_to root_path do %>
-    <i class="fa-solid fa-user user"></i>
-  <% end %>
-</div>
+<%= render "shared/bot-nav" %>

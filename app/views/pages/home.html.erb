@@ -7,6 +7,12 @@
     <h1 class="linear-title">Cooking a <br> Delicious food and <br> Calcul ratios</h1>
   </div>
   <div class="cache">
-    <%= link_to "login", login_path%>
+    <% if user_signed_in? %>
+      <%= link_to "Recipes", recipes_path, class:"green-btn" %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"black-btn" %>
+    <% else %>
+      <%= link_to "Log in", new_user_session_path, class:"green-btn" %>
+      <%= link_to "Sign up", new_user_registration_path, class:"black-btn" %>
+    <% end %>
   </div>
 </div>
