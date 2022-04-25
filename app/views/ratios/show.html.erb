@@ -9,8 +9,11 @@
     <% end %>
   </div>
 
-  <%= image_tag("crepe.jpg", class: "crepe-img") %>
-
+  <% if @recipe.photo.attached? %>
+    <%= cl_image_tag @recipe.photo.key, class: "crepe-img" %>
+  <% else %>
+    <%= image_tag("crepe.jpg", class: "crepe-img") %>
+  <% end %>
   <h3 class="title title-ingredient">Ingredients (<%= @recipe.recipe_ingredients.count %>)</h3>
 
 
@@ -19,7 +22,7 @@
       <div class="ingredient ">
         <p class="bold"><%= ingredient.ingredient.name %></p>
         <div class="quantity">
-          <p><%= ingredient.quantity * @ratio.number_of_people / @recipe.number_of_people%></p>
+          <p><%= (ingredient.quantity * @ratio.number_of_people / @recipe.number_of_people).round(2) %></p>
           <p><%= ingredient.unity %></p>
         </div>
       </div>
