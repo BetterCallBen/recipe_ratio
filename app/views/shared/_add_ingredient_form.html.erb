@@ -1,9 +1,9 @@
 <%= simple_form_for locales do |f| %>
+  <h1 class="label">Ingrédient</h1>
+  <%= f.association :ingredient, label: false %>
   <h1 class="label">Quantité</h1>
   <%= f.input :quantity, label: false %>
   <h1 class="label">Unité</h1>
-  <%= f.input :unity, label: false %>
-  <h1 class="label">Ingrédient</h1>
-  <%= f.association :ingredient, label: false %>
+  <%= f.input :unity, label: false, collection: ["ml", "L", "g", "kg", "Sachet", "Cuillère à soupe", "Cuillère à café" ] %>
   <%= f.button :submit, value: "Ajouter" %>
 <% end %>

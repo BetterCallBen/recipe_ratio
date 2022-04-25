@@ -1,6 +1,6 @@
 <div class="container m-top">
   <div class="center">
-    <h2 class="sign-up-title">Log in</h2>
+    <h2 class="sign-up-title">Connexion</h2>
   </div>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -12,7 +12,7 @@
                   label: false,
                   autofocus: true,
                   input_html: { autocomplete: "email" } %>
-      <h3 class="label">Password</h3>
+      <h3 class="label">Mot de passe</h3>
       <%= f.input :password,
                   required: false,
                   label: false,

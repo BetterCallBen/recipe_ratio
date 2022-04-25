@@ -1,16 +1,16 @@
 <div class="container">
-  <h1 class="hello-title">Hello <%= @user.first_name %></h1>
-  <p class="grey">What do you wanna cook today ? </p>
+  <h1 class="hello-title">Hi <%= @user.first_name %></h1>
+  <p class="grey">Que veux tu cuisiner aujourd'hui ? </p>
 
   <div class="infos-div">
     <%= image_tag("uber.png", class: "uber") %>
     <div>
-      <p class="blue">You have <%= pluralize(Recipe.where(user: current_user).count, "recipe") %></p>
-      <%= link_to "Add one?", new_recipe_path, class: "add-recipe-btn"  %>
+      <p class="blue">Tu as <%= pluralize(Recipe.where(user: current_user).count, "recette") %></p>
+      <%= link_to "Une de plus?", new_recipe_path, class: "add-recipe-btn"  %>
     </div>
   </div>
 
-  <h3 class="title title-recipes">Your best recipes</h3>
+  <h3 class="title title-recipes">Vos meilleures recettes</h3>
 
   <div class="recipes">
     <% @recipes.each do |recipe| %>
@@ -23,7 +23,7 @@
           <% end %>
           <p class="recipe-name blue"><%= recipe.name.capitalize %></p>
           <div class="recipe-infos">
-            <p class="recipe-people"><%= recipe.number_of_people %> people</p>
+            <p class="recipe-people"><%= pluralize(recipe.number_of_people, "personne") %></p>
             <p class="recipe-ingredients"><%= recipe.recipe_ingredients.count %> <i class="fa-solid fa-egg eggs"></i></p>
           </div>
         </div>

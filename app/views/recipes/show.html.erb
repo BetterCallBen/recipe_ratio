@@ -5,7 +5,7 @@
       <%= link_to recipes_path do%>
         <i class="fa-solid fa-arrow-left-long arrow"></i>
       <% end %>
-      <h1 class="bold blue nav-title"><%= @recipe.name.capitalize %> (for <%= @recipe.number_of_people %>) </h1>
+      <h1 class="bold blue nav-title"><%= @recipe.name.capitalize %> (pour <%= @recipe.number_of_people %>) </h1>
       <%= link_to edit_recipe_path(@recipe) do %>
         <i class="fa-solid fa-pen pen"></i>
       <% end %>
@@ -17,8 +17,8 @@
       <%= image_tag("crepe.jpg", class: "crepe-img") %>
     <% end %>
     <div class="title-div">
-      <h3 class="title">Ingredients (<%= @recipe.recipe_ingredients.count %>)</h3>
-      <a class="add-ingredient-btn" data-action="click->recipe#showIngredientForm">add ingredient</a>
+      <h3 class="title">Ingrédients (<%= @recipe.recipe_ingredients.count %>)</h3>
+      <a class="add-ingredient-btn" data-action="click->recipe#showIngredientForm">ajout ingredient</a>
     </div>
 
     <div class="ingredients">
@@ -36,7 +36,7 @@
   </div>
 
   <a class="new-ratio-btn" data-action="click->recipe#showRatioForm">
-    Calculate proportions
+    Calculer proportions
     <i class="fa-solid fa-arrow-right"></i>
   </a>
 

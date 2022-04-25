@@ -68,7 +68,7 @@ sucre_vanille = Ingredient.create!(
   name: "Sucre Vanillé"
 )
 huile = Ingredient.create!(
-  name: "huile"
+  name: "Huile"
 )
 
 RecipeIngredient.create!(
@@ -101,8 +101,6 @@ RecipeIngredient.create!(
   recipe: crepe,
   ingredient: sucre_vanille
 )
-
-UNITY = ["g", "mL", "L", "kg", "sachet"]
 
 puts "#{User.all.count} users were created"
 puts "#{Recipe.all.count} recipes were created"
