@@ -1,8 +1,13 @@
-<div class="container">
+<div class="container m-top">
   <%= simple_form_for @recipe do |f| %>
-    <%= f.input :name, label: "Nom" %>
-    <%= f.input :number_of_people, label: "Pour combien de personne ?" %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, value: "Ajouter" %>
+    <h3 class="label">Nom</h3>
+    <%= f.input :name, label: false, placeholder: "Exemple: Crêpe" %>
+    <h3 class="label">Pour combien de personne ?</h3>
+    <%= f.input :number_of_people, label: false, placeholder: "Exemple: 3" %>
+    <h3 class="label">Photo</h3>
+    <%= f.input :photo, as: :file, label: false %>
+    <div class="submit-center">
+      <%= f.button :submit, value: "Ajouter", class:"submit-btn" %>
+    </div>
   <% end %>
 </div>

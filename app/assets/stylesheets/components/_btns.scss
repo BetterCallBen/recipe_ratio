@@ -13,7 +13,7 @@ a {
   align-items: center;
   gap: 10px;
   position: absolute;
-  bottom: 8vh;
+  bottom: 8.4vh;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -57,4 +57,17 @@ a {
   &:hover {
     color: white;
   }
+}
+.submit-center {
+  display: flex;
+  justify-content: center;
+  .submit-btn {
+    padding: 8px 16px;
+    background-color: black !important;
+    color: white;
+    border-radius: 12px !important;
+  }
+}
+.btn {
+  padding: 0;
 }

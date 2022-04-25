@@ -1,5 +1,5 @@
 <div class="show-page" data-controller="recipe">
-  <div class="container" data-action="click->recipe#hideRatioForm" data-recipe-target="showPage">
+  <div class="container" data-recipe-target="showPage">
 
     <div class="mini-navbar">
       <%= link_to recipes_path do%>
@@ -42,13 +42,17 @@
 
 
   <div class="new-ingredient-form hidden" data-recipe-target="ingredientForm">
-    <a data-action="click->recipe#hideIngredientForm"><i class="fa-solid fa-xmark"></i></a>
-    <h3>Ajouter un ingrédient</h3>
+    <div class="flex-end">
+      <a data-action="click->recipe#hideIngredientForm"><i class="fa-solid fa-xmark"></i></a>
+    </div>
+    <h3 class="form-title">Ajouter un ingrédient</h3>
     <%= render "shared/add_ingredient_form", locales: [@recipe, RecipeIngredient.new] %>
   </div>
 
   <div class="new-ratio-form hidden" data-recipe-target="ratioForm">
-    <a data-action="click->recipe#hideRatioForm"><i class="fa-solid fa-xmark"></i></a>
+    <div class="flex-end">
+      <a data-action="click->recipe#hideRatioForm"><i class="fa-solid fa-xmark"></i></a>
+    </div>
     <%= render "ratios/new", locales: [@recipe, Ratio.new] %>
   </div>
 

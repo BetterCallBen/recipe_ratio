@@ -6,6 +6,7 @@ export default class extends Controller {
   showIngredientForm() {
     this.ingredientFormTarget.classList.remove("hidden")
     this.showPageTarget.classList.add("pop-up")
+    console.log(this.showPageTarget)
   }
   hideIngredientForm() {
     this.ingredientFormTarget.classList.add("hidden")
