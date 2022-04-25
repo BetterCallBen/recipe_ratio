@@ -1,27 +1,39 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :first_name, label: "First Name" %>
-    <%= f.input :last_name, label: "Last Name" %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="container m-top">
+  <div class="center">
+    <h2 class="sign-up-title">Sign up</h2>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-<%= render "devise/shared/links" %>
+    <div class="form-inputs">
+      <h3 class="label">First Name</h3>
+      <%= f.input :first_name, label: false, placeholder: "Anna"%>
+      <h3 class="label">Last Name</h3>
+      <%= f.input :last_name, label: false, placeholder: "Decroix" %>
+      <h3 class="label">Email</h3>
+      <%= f.input :email,
+                  label: false,
+                  required: true,
+                  placeholder: "JohnDoe@gmail.com",
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <h3 class="label">Password</h3>
+      <%= f.input :password,
+                  required: true,
+                  label: false,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <h3 class="label">Password Confirmation</h3>
+      <%= f.input :password_confirmation,
+                  label: false,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+  <% end %>
+
+</div>

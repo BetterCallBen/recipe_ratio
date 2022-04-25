@@ -56,7 +56,15 @@ input {
 .form-title {
   margin-bottom: 12px;
 }
+.sign-up-title {
+  margin-bottom: 24px;
+  font-weight: 700;
+}
 .flex-end {
   display: flex;
   justify-content: flex-end;
+}
+.center {
+  display: flex;
+  justify-content: center;
 }
