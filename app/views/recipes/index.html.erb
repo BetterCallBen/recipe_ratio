@@ -6,11 +6,18 @@
     <%= image_tag("uber.png", class: "uber") %>
     <div>
       <p class="blue">Tu as <%= pluralize(Recipe.where(user: current_user).count, "recette") %></p>
-      <%= link_to "Une de plus?", new_recipe_path, class: "add-recipe-btn"  %>
+      <% if Recipe.where(user: current_user).count == 0 %>
+        <%= link_to "Ajoute te première recette!", new_recipe_path, class: "add-recipe-btn"  %>
+      <% else %>
+        <%= link_to "Une de plus?", new_recipe_path, class: "add-recipe-btn"  %>
+      <% end %>
     </div>
   </div>
-
-  <h3 class="title title-recipes">Vos meilleures recettes</h3>
+  <% if Recipe.where(user: current_user).count > 0 %>
+    <h3 class="title title-recipes">Tes meilleures recettes</h3>
+  <% else %>
+    <h3 class="title title-recipes">Malheureusement tu n'as encore aucune recette...</h3>
+  <% end %>
 
   <div class="recipes">
     <% @recipes.each do |recipe| %>
